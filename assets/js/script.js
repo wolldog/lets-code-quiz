@@ -129,5 +129,20 @@ function answer(event){
             timer = (timer - 10);
             checkAllDone ();
             }
-    
 }
+
+//Check if there are any more questions
+//If there are more question, generate the next question
+//If there are no more questions, stop the quiz and record current timer as score
+
+function checkAllDone (){  
+    if(questionNum == (questions.length - 1)) {
+    stopQuiz()
+    } 
+
+    else {
+        questionNum++;
+        generateQuestion (questionNum)
+        }
+    }
+
