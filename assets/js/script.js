@@ -86,8 +86,8 @@ function generateQuestion(questionNum) {
     for (let i = 0; i < questions[questionNum].choices.length; i++) {
         
         buttonEl = document.createElement("button")
-        answerButtonEl.textContent = ((i+1) + ". " + questions[questionNum].choices[i]);
-        inputDiv.appendChild(answerButtonEl);
+        buttonEl.textContent = ((i+1) + ". " + questions[questionNum].choices[i]);
+        inputDiv.appendChild(buttonEl);
         buttonEl.setAttribute("class", "choices");
         buttonEl.setAttribute("data-value", questions[questionNum].choices[i]);
         buttonEl.addEventListener("click", answer);
@@ -99,7 +99,6 @@ function generateQuiz(){
 
     questionNum = 0;
     timer = 75;  
-    
     generateQuestion (questionNum)  
     timerInterval = setInterval(function() {
         // reduce the timer value
@@ -111,5 +110,24 @@ function generateQuiz(){
         }
         
     }, 1000);
+}
+
+function answer(event){
+
+    var selectedAns = event.target.dataset.value;
+    var correctAns = questions[questionNum].correctAnswer
     
-    }
+        if(selectedAns === correctAns) {
+            console.log("Correct")
+            resultDiv.setAttribute("class", "correct")
+            checkAllDone ();
+        }
+    
+        else {
+            console.log("Wrong");
+            resultDiv.setAttribute("class", "wrong")
+            timer = (timer - 10);
+            checkAllDone ();
+            }
+    
+}
