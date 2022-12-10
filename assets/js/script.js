@@ -94,4 +94,22 @@ function generateQuestion(questionNum) {
     }
 }
 
+//start timer and call the function generateQuestion
+function generateQuiz(){
 
+    questionNum = 0;
+    timer = 75;  
+    
+    generateQuestion (questionNum)  
+    timerInterval = setInterval(function() {
+        // reduce the timer value
+        timer--;
+        // display new timer value
+        document.getElementById("timer-value").textContent = timer;
+        if (timer <=0) {
+            clearInterval(timerInterval)
+        }
+        
+    }, 1000);
+    
+    }
