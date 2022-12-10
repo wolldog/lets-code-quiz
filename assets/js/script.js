@@ -55,6 +55,11 @@ var initials;
 
 //create elements and content for quiz landing page
 
+titleDiv.setAttribute("style", "text-align: center")
+contentDiv.setAttribute("style", "text-align: center")
+inputDiv.setAttribute("style", "text-align: center")
+
+
 h1El.textContent = ("Code Quiz Challenge");
 pEl.textContent = ("Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!");
 buttonEl.textContent = ("Start Quiz")
@@ -65,8 +70,7 @@ inputDiv.appendChild(buttonEl);
 
 buttonEl.setAttribute("onclick", "generateQuiz()");
 buttonEl.setAttribute("id", "start")
-h1El.setAttribute("class", "center-text");
-pEl.setAttribute("class", "center-text")
+
 
 //clear existing content before generating new content
 function clearDiv(){
@@ -77,12 +81,17 @@ function clearDiv(){
     
 }
 
-//render the question and answer buttons
+//render the question and loop through the generation of available answer buttons
 function generateQuestion(questionNum) {
     
     clearDiv()
+
+    titleDiv.setAttribute("style", "text-align: left")
+    contentDiv.setAttribute("style", "text-align: left")
+    inputDiv.setAttribute("style", "text-align: left")
+
     h1El.textContent = (questions[questionNum].question);
-    h1El.setAttribute("class", "left-justify")
+
     titleDiv.appendChild(h1El);
 
     for (let i = 0; i < questions[questionNum].choices.length; i++) {
@@ -163,14 +172,16 @@ function stopQuiz(){
 function allDone(){
     
     clearDiv();
+
+    titleDiv.setAttribute("style", "text-align: left")
+    contentDiv.setAttribute("style", "text-align: left")
+    inputDiv.setAttribute("style", "text-align: left")
+   
     h1El.textContent = ("All Done!");
     titleDiv.appendChild(h1El);
     
     pEl.textContent = (" Your final score is " + score + ".");
     contentDiv.appendChild(pEl)
-    
-    titleDiv.setAttribute("class", "left-justify");
-    pEl.setAttribute("class", "left-justify")
     
     
     labelEl.textContent = ("Enter initials: ");
