@@ -60,3 +60,12 @@ buttonEl.setAttribute("onclick", "generateQuiz()");
 buttonEl.setAttribute("id", "start")
 h1El.setAttribute("class", "center-text");
 pEl.setAttribute("class", "center-text")
+
+//clear existing content before generating new content
+function clearDiv(){
+
+    titleDiv.textContent = " ";
+    contentDiv.textContent = " ";
+    inputDiv.textContent = " ";
+    
+}
