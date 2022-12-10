@@ -16,3 +16,9 @@ main {
     display: flexbox;
     flex-direction: column;
 }
+
+.container {
+    max-width: 60%;
+    margin: 20px auto;
+}
+
