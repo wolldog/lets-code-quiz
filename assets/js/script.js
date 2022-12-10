@@ -49,7 +49,8 @@ var questions = [
 //other variables
 
 var questionNum; 
-var timer; 
+var timer;
+var score; 
 
 //create elements and content for quiz landing page
 
@@ -154,3 +155,4 @@ function stopQuiz(){
     console.log(score)
     allDone();
 }
+
