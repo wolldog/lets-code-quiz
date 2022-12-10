@@ -68,3 +68,24 @@ background-color: var(--pink);
     display: inline;
     margin-left: 5px;
 }
+
+.correct h2::after {
+    
+    content: "Correct!";
+    font-style: italic; 
+    font-weight: lighter;
+    font-size: 40px;
+    color: gray;
+}
+
+.wrong h2::after {
+    content: "Wrong!";
+    font-style: italic; 
+    font-weight: lighter;
+    font-size: 40px;
+    color: gray;
+}
+
+.correct, .wrong {
+    border-top: 1px solid gray;
+}
