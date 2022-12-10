@@ -1,7 +1,8 @@
 //variables to reference locations in docmument
 var titleDiv = document.querySelector("#titleDiv")
 var contentDiv = document.querySelector("#contentDiv")
-var resultDiv = document.querySelector("#resultdiv")
+var inputDiv = document.querySelector("#inputDiv")
+var resultDiv = document.querySelector("#resultDiv")
 
 //variables to create elements in document
 var h1El = document.createElement("h1");
