@@ -1,0 +1,18 @@
+
+/* color variables */
+
+:root {
+    --purple: #5c328f;
+    --pink: #d54bc5;
+    --mauve: rgb(216, 209, 216);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    transition: 0.5s;
+}
+
+main { 
+    display: flexbox;
+    flex-direction: column;
+}
