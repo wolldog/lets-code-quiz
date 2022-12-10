@@ -146,3 +146,11 @@ function checkAllDone (){
         }
     }
 
+//stops timer and records score
+//called when there are no more questions or timer reaches zero
+function stopQuiz(){
+    clearInterval(timerInterval)
+    score += timer
+    console.log(score)
+    allDone();
+}
