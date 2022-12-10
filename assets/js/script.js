@@ -46,6 +46,11 @@ var questions = [
     }
 ]
 
+//other variables
+
+var questionNum; 
+var timer; 
+
 //create elements and content for quiz landing page
 
 h1El.textContent = ("Code Quiz Challenge");
@@ -69,3 +74,24 @@ function clearDiv(){
     inputDiv.textContent = " ";
     
 }
+
+//render the question and answer buttons
+function generateQuestion(questionNum) {
+    
+    clearDiv()
+    h1El.textContent = (questions[questionNum].question);
+    h1El.setAttribute("class", "left-justify")
+    titleDiv.appendChild(h1El);
+
+    for (let i = 0; i < questions[questionNum].choices.length; i++) {
+        
+        buttonEl = document.createElement("button")
+        answerButtonEl.textContent = ((i+1) + ". " + questions[questionNum].choices[i]);
+        inputDiv.appendChild(answerButtonEl);
+        buttonEl.setAttribute("class", "choices");
+        buttonEl.setAttribute("data-value", questions[questionNum].choices[i]);
+        buttonEl.addEventListener("click", answer);
+    }
+}
+
+
