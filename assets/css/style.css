@@ -60,4 +60,11 @@ button:hover {
 background-color: var(--pink);
 }
 
+#start {
+    display: inline;
+}
 
+#submit {
+    display: inline;
+    margin-left: 5px;
+}
