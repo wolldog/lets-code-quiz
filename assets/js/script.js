@@ -44,3 +44,18 @@ var questions = [
     correctAnswer : "in"
     }
 ]
+
+//create elements and content for quiz landing page
+
+h1El.textContent = ("Code Quiz Challenge");
+pEl.textContent = ("Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!");
+buttonEl.textContent = ("Start Quiz")
+
+titleDiv.appendChild(h1El);
+contentDiv.appendChild(pEl);
+inputDiv.appendChild(buttonEl);
+
+buttonEl.setAttribute("onclick", "generateQuiz()");
+buttonEl.setAttribute("id", "start")
+h1El.setAttribute("class", "center-text");
+pEl.setAttribute("class", "center-text")
