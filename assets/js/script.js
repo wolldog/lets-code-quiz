@@ -50,7 +50,8 @@ var questions = [
 
 var questionNum; 
 var timer;
-var score; 
+var score;
+var initials; 
 
 //create elements and content for quiz landing page
 
@@ -150,6 +151,7 @@ function checkAllDone (){
 //stops timer and records score
 //called when there are no more questions or timer reaches zero
 function stopQuiz(){
+    score = 0
     clearInterval(timerInterval)
     score += timer
     console.log(score)
@@ -190,8 +192,12 @@ function allDone(){
     
     buttonEl.setAttribute("type", "submit")
     buttonEl.setAttribute("id", "submit")
-    buttonEl.addEventListener("click", function (){
-        var initials = inputEl.value;
+    buttonEl.addEventListener("click", function (event){
+        event.preventDefault
+        var initials = inputEl.textContent;
+        debugger
         return initials
-    });
+        
+    }); 
 };
+
