@@ -156,3 +156,42 @@ function stopQuiz(){
     allDone();
 }
 
+//generates elements for 'All Done', input intials and submit button.
+
+function allDone(){
+    
+    clearDiv();
+    h1El.textContent = ("All Done!");
+    titleDiv.appendChild(h1El);
+    
+    pEl.textContent = (" Your final score is " + score + ".");
+    contentDiv.appendChild(pEl)
+    
+    titleDiv.setAttribute("class", "left-justify");
+    pEl.setAttribute("class", "left-justify")
+    
+    
+    labelEl.textContent = ("Enter initials: ");
+    buttonEl.textContent = ("Submit");
+
+    contentDiv.appendChild(formEl)
+    formEl.appendChild(labelEl);
+    formEl.appendChild(inputEl)
+    formEl.appendChild(buttonEl)
+    
+    formEl.setAttribute("id", "scoreForm");
+    
+    labelEl.setAttribute("for", "initials");
+    
+    inputEl.setAttribute("name", "initials")
+    inputEl.setAttribute("id", "initials")
+    inputEl.setAttribute("type", "text")
+    inputEl.setAttribute("required", "")
+    
+    buttonEl.setAttribute("type", "submit")
+    buttonEl.setAttribute("id", "submit")
+    buttonEl.addEventListener("click", function (){
+        var initials = inputEl.value;
+        return initials
+    });
+};
