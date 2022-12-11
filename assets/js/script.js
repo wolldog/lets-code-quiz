@@ -51,7 +51,7 @@ var questions = [
 var questionNum; 
 var timer;
 var score;
-var initials; 
+var initials;
 
 //create elements and content for quiz landing page
 
@@ -127,7 +127,7 @@ function answer(event){
 
     var selectedAns = event.target.dataset.value;
     var correctAns = questions[questionNum].correctAnswer
-    
+
     titleDiv.setAttribute("style", "text-align: left")
     contentDiv.setAttribute("style", "text-align: left")
     inputDiv.setAttribute("style", "text-align: left")
@@ -191,6 +191,7 @@ function allDone(){
     
     labelEl.textContent = ("Enter initials: ");
     buttonEl.textContent = ("Submit");
+    buttonEl.removeEventListener("click", answer);
 
     contentDiv.appendChild(formEl)
     formEl.appendChild(labelEl);
@@ -208,12 +209,6 @@ function allDone(){
     
     buttonEl.setAttribute("type", "submit")
     buttonEl.setAttribute("id", "submit")
-    buttonEl.addEventListener("click", function (event){
-        event.preventDefault
-        var initials = inputEl.textContent;
-        debugger
-        return initials
-        
-    }); 
-};
+    //buttonEl.setAttribute("onclick", storeScore);    
+    }; 
 
