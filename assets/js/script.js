@@ -51,7 +51,7 @@ var questions = [
 var questionNum; 
 var timer;
 var score;
-var initials;
+// var initials;
 
 //create elements and content for quiz landing page
 
@@ -73,6 +73,7 @@ buttonEl.setAttribute("id", "start")
 
 
 //clear existing content before generating new content
+
 function clearDiv(){
 
     titleDiv.textContent = " ";
@@ -82,6 +83,7 @@ function clearDiv(){
 }
 
 //render the question and loop through the generation of available answer buttons
+
 function generateQuestion(questionNum) {
     
     clearDiv()
@@ -106,6 +108,7 @@ function generateQuestion(questionNum) {
 }
 
 //start timer and call the function generateQuestion
+
 function generateQuiz(){
 
     questionNum = 0;
@@ -122,6 +125,9 @@ function generateQuiz(){
         
     }, 1000);
 }
+
+// Compare the selected answer with the correct answer
+
 
 function answer(event){
 
@@ -149,12 +155,16 @@ function answer(event){
 
 //Check if there are any more questions
 //If there are more question, generate the next question
-//If there are no more questions, stop the quiz and record current timer as score
+//If there are no more questions or the time is less than or equal to zero, stop the quiz and record current timer as score
 
 function checkAllDone (){  
     if(questionNum == (questions.length - 1)) {
     stopQuiz()
     } 
+
+    if(timer <= 0){
+    stopQuiz();
+    }
 
     else {
         questionNum++;
@@ -164,6 +174,7 @@ function checkAllDone (){
 
 //stops timer and records score
 //called when there are no more questions or timer reaches zero
+
 function stopQuiz(){
     score = 0
     clearInterval(timerInterval)
@@ -215,7 +226,9 @@ function allDone(){
     formEl.appendChild(buttonEl)
     buttonEl.setAttribute("id", "submit")
     
-    //When 'Submit' button is clicked 
+    //When 'Submit' button is clicked;
+
+
     buttonEl.addEventListener("click", function(event) {
         event.preventDefault();
         
@@ -227,8 +240,6 @@ function allDone(){
         console.log(finalScore);
         
         var scores = [];
-        
-        // debugger
         
         var storedScore = JSON.parse(localStorage.getItem ("scoreBoard"));
         if (storedScore !== null){
