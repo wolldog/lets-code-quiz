@@ -91,3 +91,19 @@ background-color: var(--pink);
     max-width: 60%;
     margin: 20px auto;
 }
+
+#scoreBoard {
+    margin: 20% auto;
+    max-width: 50%;
+}
+
+.scoreBoardBtns {
+    display: inline;
+    margin: 5px 5px 5px 0px
+}
+
+#scoreBoardPlHd {
+    background-color: var(--mauve);
+    line-height: 30px;
+    padding: 3px;
+}
