@@ -7,15 +7,21 @@
     --mauve: rgb(216, 209, 216);
 }
 
+/* Google font 'Roboto' utilized */
+
 body {
     font-family: 'Roboto', sans-serif;
     transition: 0.5s;
 }
 
+/* Flexbox for responsive content */
+
 main { 
     display: flexbox;
     flex-direction: column;
 }
+
+/* Header for link to High Scores page and timer */
 
 header {
 
@@ -24,7 +30,6 @@ header {
     align-items: center;
     min-height: 100px;
     padding: 15px;
-
 }
 
 header a {
@@ -32,6 +37,7 @@ header a {
     text-decoration: none;
     color: var(--pink);
 }
+
 
 .container {
     max-width: 60%;
@@ -43,6 +49,7 @@ header a {
     font-size: larger;
 }
 
+/* Styling for all buttons */
 button {
     
     background-color: var(--purple);
@@ -55,19 +62,27 @@ button {
     display: block;
 }
 
+/* Modify background color of buttons on mouse hover */
+
 button:hover {
 
 background-color: var(--pink);
 }
 
+/* Modify alignment of 'Start Button' */
+
 #start {
     display: inline;
 }
+
+/* Modify alignment of 'Submit Button' */
 
 #submit {
     display: inline;
     margin-left: 5px;
 }
+
+/* Modify class of 'resultDiv' on answer to create content */
 
 .correct h2::after {
     
@@ -91,6 +106,8 @@ background-color: var(--pink);
     max-width: 60%;
     margin: 20px auto;
 }
+
+/* Add styling for scores.html scoreboard */
 
 #scoreBoard {
     margin: 20% auto;
