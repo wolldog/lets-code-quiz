@@ -88,4 +88,6 @@ background-color: var(--pink);
 
 .correct, .wrong {
     border-top: 1px solid gray;
+    max-width: 60%;
+    margin: 20px auto;
 }
