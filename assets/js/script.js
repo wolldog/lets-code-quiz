@@ -128,6 +128,11 @@ function answer(event){
     var selectedAns = event.target.dataset.value;
     var correctAns = questions[questionNum].correctAnswer
     
+    titleDiv.setAttribute("style", "text-align: left")
+    contentDiv.setAttribute("style", "text-align: left")
+    inputDiv.setAttribute("style", "text-align: left")
+    resultDiv.setAttribute("style", "text-align: left")
+    
         if(selectedAns === correctAns) {
             console.log("Correct")
             resultDiv.setAttribute("class", "correct")
