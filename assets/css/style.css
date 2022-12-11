@@ -107,3 +107,17 @@ background-color: var(--pink);
     line-height: 30px;
     padding: 3px;
 }
+
+/* scoreboard list style */
+
+.scoreList {
+    margin: 2px 0px;
+    padding: 3px;
+    background-color: var(--mauve);
+}
+
+#scoreBoardTbl {
+    list-style-position: inside;
+    margin-left: 0px;
+    padding-left: 0px;
+}
