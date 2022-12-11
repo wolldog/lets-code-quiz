@@ -75,6 +75,11 @@ background-color: var(--pink);
     display: inline;
 }
 
+#initials {
+    line-height: 23px;
+
+}
+
 /* Modify alignment of 'Submit Button' */
 
 #submit {
