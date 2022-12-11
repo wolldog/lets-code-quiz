@@ -169,6 +169,7 @@ function stopQuiz(){
     clearInterval(timerInterval)
     score += timer
     console.log(score)
+    buttonEl.removeEventListener("click", answer);
     allDone();
 }
 
@@ -177,7 +178,7 @@ function stopQuiz(){
 function allDone(){
     
     clearDiv();
-
+    
     titleDiv.setAttribute("style", "text-align: left")
     contentDiv.setAttribute("style", "text-align: left")
     inputDiv.setAttribute("style", "text-align: left")
@@ -187,7 +188,7 @@ function allDone(){
     
     pEl.textContent = (" Your final score is " + score + ".");
     contentDiv.appendChild(pEl)
-    
+
     
     labelEl.textContent = ("Enter initials: ");
     buttonEl.textContent = ("Submit");
@@ -199,16 +200,63 @@ function allDone(){
     formEl.appendChild(buttonEl)
     
     formEl.setAttribute("id", "scoreForm");
-    
+        
+    labelEl.textContent = ("Enter initials: ");
     labelEl.setAttribute("for", "initials");
-    
+    formEl.appendChild(labelEl);
+
     inputEl.setAttribute("name", "initials")
     inputEl.setAttribute("id", "initials")
     inputEl.setAttribute("type", "text")
     inputEl.setAttribute("required", "")
-    
-    buttonEl.setAttribute("type", "submit")
+    formEl.appendChild(inputEl)
+
+    buttonEl.textContent = ("Submit");
+    formEl.appendChild(buttonEl)
     buttonEl.setAttribute("id", "submit")
-    //buttonEl.setAttribute("onclick", storeScore);    
-    }; 
+    
+    //When 'Submit' button is clicked 
+    buttonEl.addEventListener("click", function(event) {
+        event.preventDefault();
+        
+        var finalScore = {
+            userInitials: inputEl.value.trim(),
+            userScore: score
+        };
+        
+        console.log(finalScore);
+        
+        var scores = [];
+        
+        // debugger
+        
+        var storedScore = JSON.parse(localStorage.getItem ("scoreBoard"));
+        if (storedScore !== null){
+            scores = storedScore;
+        }
+
+        scores.push(finalScore);
+        
+        function storeScore(){
+        
+            localStorage.setItem("scoreBoard", JSON.stringify(scores))
+            
+        }
+    
+
+        storeScore()
+    
+        window.location.replace("./assets/html/scores.html")
+    })
+}    
+    
+    
+    
+
+    
+
+
+
+
+
 
