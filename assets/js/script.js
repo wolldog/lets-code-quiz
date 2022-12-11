@@ -121,6 +121,7 @@ function generateQuiz(){
         document.getElementById("timer-value").textContent = timer;
         if (timer <=0) {
             clearInterval(timerInterval)
+            stopQuiz();
         }
         
     }, 1000);
@@ -158,13 +159,10 @@ function answer(event){
 //If there are no more questions or the time is less than or equal to zero, stop the quiz and record current timer as score
 
 function checkAllDone (){  
+    
     if(questionNum == (questions.length - 1)) {
     stopQuiz()
     } 
-
-    if(timer <= 0){
-    stopQuiz();
-    }
 
     else {
         questionNum++;
