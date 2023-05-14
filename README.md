@@ -10,7 +10,7 @@ You are given 75 seconds to answer the multi-choice questions presented when you
 
 The application works in your browser and does not require installation.
 
-*/ To do... add link to deployed application
+[Let's code quiz](https://wolldog.github.io/lets-code-quiz/index.html)
 
 ## Usage
 Click on the 'Start Quiz' button to begin. The timer starts when the button is clicked. 
